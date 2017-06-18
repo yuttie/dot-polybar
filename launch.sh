@@ -7,6 +7,8 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 0.1; done
 
 # Launch bar1 and bar2
-polybar main&
+for m in $(xrandr --listmonitors | tail -n +2 | awk -e '{ print $4  }'); do
+  MONITOR=$m polybar main&
+done
 
 echo "Polybar launched."
