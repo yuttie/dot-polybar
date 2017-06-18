@@ -150,7 +150,6 @@ interval = 3.0
 format-connected-prefix = 
 format-connected-prefix-font = 5
 format-connected = <label-connected>
-format-connected-underline = #55aa55
 label-connected = %downspeed:9% %upspeed:9%
 label-connected-font = 4
 
@@ -172,7 +171,6 @@ interval = 3.0
 format-connected-prefix = 
 format-connected-prefix-font = 5
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #55aa55
 label-connected = %essid% %downspeed:9% %upspeed:9%
 label-connected-font = 4
 
