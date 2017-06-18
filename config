@@ -306,8 +306,8 @@ label-warn-foreground = ${colors.secondary}
 type = internal/date
 interval = 1
 
-date =
-date-alt = " %Y-%m-%d (%a) "
+date = " %Y-%m-%d (%a) "
+date-alt =
 
 time = " %H:%M:%S"
 time-alt = ${self.time}
