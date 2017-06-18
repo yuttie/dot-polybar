@@ -1,8 +1,6 @@
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = #2a2c37
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
 foreground-alt = #555
 primary = #ffb52a
@@ -15,8 +13,6 @@ alert = #bd2c40
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
@@ -26,7 +22,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0
+border-bottom-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -35,15 +31,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = M+ 1c:weight=light:size=12;0
-font-1 = M+ 1c:weight=medium:size=12;0
-font-2 = Source Code Pro:size=9;0
+font-0 = M+ 1c:weight=light:size=12;2
+font-1 = M+ 1c:weight=medium:size=12;2
+font-2 = Source Code Pro:size=9;2
 font-3 = Source Code Pro:weight=light:size=12;3
 font-4 = Material Design Icons:size=16;3
-font-5 = Material Icons:size=16;3
+font-5 = Oswald:size=12;3
 
 modules-left = i3
-modules-center = 
+modules-center =
 modules-right = cpu memory eth wlan xbacklight volume battery temperature date
 
 tray-position = right
@@ -86,17 +82,20 @@ label-focused-font = 2
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 2
+label-unfocused-font = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
+label-visible-font = 1
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
+label-urgent-font = 1
 
 
 
@@ -131,13 +130,12 @@ ramp-coreload-font = 3
 type = internal/memory
 interval = 2
 format = <label> <bar-used>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = 
 label = %gb_used%
 bar-used-indicator =
 bar-used-width = 16
 bar-used-foreground-0 = #55aa55
-bar-used-foreground-1 = #557755
+bar-used-foreground-1 = #55aa55
 bar-used-foreground-2 = #f5a70a
 bar-used-foreground-3 = #ff5555
 bar-used-empty-foreground = #444444
@@ -172,7 +170,7 @@ label-disconnected-font = 4
 
 [module/wlan]
 type = internal/network
-interface = wlp
+interface = wlp58s0
 interval = 3.0
 
 format-connected-prefix = 
@@ -203,17 +201,17 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = 
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
+bar-indicator-font = 3
 bar-fill = ─
-bar-fill-font = 2
+bar-fill-font = 3
 bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
+bar-empty-font = 3
 bar-empty-foreground = ${colors.foreground-alt}
 
 
@@ -229,15 +227,15 @@ card = intel_backlight
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 
+label-volume = 
 label-volume-foreground = ${root.foreground}
-label-volume-font = 4
+label-volume-font = 5
 
-format-muted-prefix = " "
+format-muted = <label-muted>
+format-muted-font = 5
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = 
+label-muted = 
 label-muted-foreground = #66
-label-muted-font = 4
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -270,8 +268,7 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full = <ramp-capacity> <label-full>
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -279,7 +276,6 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
 ramp-capacity-font = 5
 
 animation-charging-0 = 
@@ -287,7 +283,6 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 animation-charging-font = 5
 
@@ -300,19 +295,14 @@ warn-temperature = 60
 
 format-prefix = 
 format-prefix-font = 5
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 
 
@@ -328,7 +318,6 @@ time-alt = ${self.time}
 
 format-prefix = 
 format-prefix-font = 5
-format-underline = #0a6cf5
 
 label = %date% %time%
 
