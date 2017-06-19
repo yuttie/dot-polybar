@@ -40,7 +40,7 @@ font-5 = Oswald:size=12;3
 
 modules-left = i3
 modules-center =
-modules-right = cpu memory eth wlan xbacklight volume battery temperature date
+modules-right = cpu memory eth-home eth-terra wifi-milkyway xbacklight volume battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -143,7 +143,6 @@ bar-used-empty-font = 3
 
 [module/eth]
 type = internal/network
-interface = enp38s0
 interval = 3.0
 
 format-connected-prefix = 
@@ -162,9 +161,20 @@ label-disconnected-font = 4
 
 
 
-[module/wlan]
+[module/eth-home]
+inherit = module/eth
+interface = enp38s0
+
+
+
+[module/eth-terra]
+inherit = module/eth
+interface = enp0s25
+
+
+
+[module/wifi]
 type = internal/network
-interface = wlp58s0
 interval = 3.0
 
 format-connected-prefix = 
@@ -187,6 +197,12 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+
+
+[module/wifi-milkyway]
+inherit = module/wifi
+interface = wlp58s0
 
 
 
