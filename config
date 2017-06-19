@@ -290,6 +290,9 @@ format-prefix = 
 format-prefix-font = 5
 format = <label>
 format-underline = #f50a4d
+
+format-warn-prefix = 
+format-warn-prefix-font = 5
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
