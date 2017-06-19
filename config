@@ -44,8 +44,7 @@ modules-right = cpu memory eth wlan xbacklight volume battery temperature date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+tray-maxsize = 20
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
