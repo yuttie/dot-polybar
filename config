@@ -244,13 +244,13 @@ card = intel_backlight
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 
+label-volume = "%{A3:~/.config/polybar/pavucontrol.sh:}%{A}"
 label-volume-foreground = ${root.foreground}
 label-volume-font = 5
 
 format-muted = <label-muted>
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = 
+label-muted = "%{A3:~/.config/polybar/pavucontrol.sh:}%{A}"
 label-muted-font = 5
 label-muted-foreground = #66
 
