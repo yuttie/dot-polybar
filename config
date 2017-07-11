@@ -312,7 +312,7 @@ animation-charging-font = 5
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 75
 
 format-prefix = 
 format-prefix-font = 5
