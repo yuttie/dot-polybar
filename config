@@ -318,6 +318,7 @@ animation-charging-font = 5
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
+hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
 warn-temperature = 75
 
 format-prefix = 
