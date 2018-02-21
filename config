@@ -42,7 +42,7 @@ font-7 = Roboto:weight=light:size=12;3
 
 modules-left = i3
 modules-center =
-modules-right = cpu memory eth-home eth-terra wifi-milkyway xbacklight volume battery temperature date
+modules-right = cpu memory eth-home eth-forge eth-terra wifi-milkyway xbacklight volume battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -177,6 +177,12 @@ interface = enp38s0
 [module/eth-terra]
 inherit = module/eth
 interface = enp0s25
+
+
+
+[module/eth-forge]
+inherit = module/eth
+interface = enp0s31f6
 
 
 
