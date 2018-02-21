@@ -170,7 +170,7 @@ label-disconnected-font = 8
 
 [module/eth-home]
 inherit = module/eth
-interface = enp38s0
+interface = enp8s0
 
 
 
