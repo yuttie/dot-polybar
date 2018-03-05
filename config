@@ -2,7 +2,7 @@
 background = #2a2c37
 background-alt = #444
 foreground = #ffffff
-foreground-alt = #555
+foreground-alt = #666
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -40,7 +40,7 @@ font-5 = Roboto:weight=medium:size=12;3
 font-6 = Roboto Mono:weight=light:size=12;3
 font-7 = Roboto:weight=light:size=12;3
 
-modules-left = i3
+modules-left = ewmh
 modules-center =
 modules-right = cpu memory eth-home eth-forge eth-terra wifi-milkyway xbacklight volume battery temperature date
 
@@ -50,6 +50,40 @@ tray-maxsize = 20
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+
+
+[module/ewmh]
+type = internal/xworkspaces
+enable-click = true
+enable-scroll = true
+
+format = <label-state>
+
+label-active = %name%
+label-active-foreground = ${colors.foreground}
+label-active-background = ${colors.background-alt}
+label-active-underline = ${colors.primary}
+label-active-padding = 2
+label-active-font = 6
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
+label-occupied-padding = ${self.label-active-padding}
+label-occupied-font = ${self.label-active-font}
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.secondary}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = ${self.label-active-padding}
+label-urgent-font = ${self.label-active-font}
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-background = ${colors.background}
+label-empty-padding = ${self.label-active-padding}
+label-empty-font = ${self.label-active-font}
 
 
 
