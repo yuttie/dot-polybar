@@ -395,8 +395,8 @@ interval = 1
 
 format-underline = ${colors.mod-underline}
 
-date =
-date-alt = "%{F#888} %Y-%m-%d (%a)%{F-} "
+date = "%{F#888} %Y-%m-%d (%a)%{F-} "
+date-alt =
 
 time = "%{F#888}%{F-} %H:%M:%S"
 time-alt = ${self.time}
