@@ -1,7 +1,7 @@
 [colors]
-background = #2a2c37
-background-alt = #444
-foreground = #ddd
+background = #151821
+background-alt = #83a1c5
+foreground = #8e92a4
 foreground-alt = #666
 primary = #ffb52a
 secondary = #e60053
@@ -38,7 +38,7 @@ font-1 = UNUSED
 ; For speaker indicator
 font-2 = Roboto:weight=200:size=9;2
 font-3 = UNUSED
-font-4 = Iosevka Curly:size=12;3
+font-4 = Iosevka Fixed Curly:size=12;3
 ; For workspace names
 font-5 = Roboto:size=9;3
 ; For digits
@@ -48,7 +48,7 @@ font-7 = Roboto:size=9;3
 
 modules-left = i3
 modules-center =
-modules-right = cpu memory eth-home eth-forge eth-terra wifi-milkyway xbacklight volume battery temperature date
+modules-right = cpu memory eth-home eth-dynamo eth-forge eth-terra wifi-milkyway xbacklight battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -69,7 +69,7 @@ format = <label-state>
 label-active = %name%
 label-active-foreground = ${colors.foreground}
 label-active-background = ${colors.background-alt}
-label-active-underline = ${colors.primary}
+label-active-underline = ${colors.background-alt}
 label-active-padding = 4
 label-active-font = 6
 
@@ -107,27 +107,30 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = #83a1c5
+label-mode-background = ${colors.background}
+label-mode-font = 6
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-foreground = #e4e5ed
+label-focused-background = #3a4164
+label-focused-underline = #3a4164
 label-focused-padding = 4
 label-focused-font = 6
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-foreground = ${self.label-unfocused-foreground}
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+label-visible-foreground = #c6c8d1
+label-visible-background = #40424f
+label-visible-underline = #40424f
 label-visible-padding = ${self.label-focused-padding}
 label-visible-font = ${self.label-unfocused-font}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-foreground = #66
+label-unfocused-foreground = #8e92a4
+label-unfocused-background = #151821
 label-unfocused-padding = ${self.label-focused-padding}
 label-unfocused-font = ${self.label-focused-font}
 
@@ -152,7 +155,7 @@ type = internal/cpu
 interval = 2
 format = <label> <ramp-coreload>
 format-underline = ${colors.mod-underline}
-format-prefix = %{F#888} %{F-}
+format-prefix = %{F#8e92a4} %{F-}
 label = 
 label-font = 8
 ramp-coreload-0 = ▁
@@ -163,14 +166,14 @@ ramp-coreload-4 = ▅
 ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
-ramp-coreload-0-foreground = #55aa55
-ramp-coreload-1-foreground = #55aa55
-ramp-coreload-2-foreground = #55aa55
-ramp-coreload-3-foreground = #55aa55
-ramp-coreload-4-foreground = #f5a70a
-ramp-coreload-5-foreground = #f5a70a
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7-foreground = #ff5555
+ramp-coreload-0-foreground = #8e92a4
+ramp-coreload-1-foreground = #9a9dae
+ramp-coreload-2-foreground = #a6a9b8
+ramp-coreload-3-foreground = #b2b4c2
+ramp-coreload-4-foreground = #bec0cd
+ramp-coreload-5-foreground = #cbccd7
+ramp-coreload-6-foreground = #d7d8e2
+ramp-coreload-7-foreground = #e4e5ed
 ramp-coreload-font = 3
 
 
@@ -180,18 +183,18 @@ type = internal/memory
 interval = 2
 format = <bar-used>
 format-underline = ${colors.mod-underline}
-format-prefix = %{F#888}    %{F-}
+format-prefix = %{F#8e92a4}    %{F-}
 label = %{T7}%gb_used:8%%{T-}
 label-font = 8
 bar-used-indicator =
-bar-used-width = 16
-bar-used-foreground-0 = #55aa55
-bar-used-foreground-1 = #55aa55
-bar-used-foreground-2 = #f5a70a
-bar-used-foreground-3 = #ff5555
+bar-used-width = 30
+bar-used-foreground-0 = #8e92a4
+bar-used-foreground-1 = #aaadbc
+bar-used-foreground-2 = #c7c8d4
+bar-used-foreground-3 = #e4e5ed
 bar-used-empty-foreground = #444444
-bar-used-fill = ▌
-bar-used-empty = ▌
+bar-used-fill = █
+bar-used-empty = █
 bar-used-fill-font = 3
 bar-used-empty-font = 3
 
@@ -201,11 +204,11 @@ bar-used-empty-font = 3
 type = internal/network
 interval = 2
 
-format-connected-prefix = %{F#888}%{F-}
+format-connected-prefix = %{F#8e92a4}%{F-}
 format-connected-prefix-font = 5
 format-connected = <label-connected>
 format-connected-underline = ${colors.mod-underline}
-label-connected = %{F#888} %{F-}%{T7}%downspeed:9%%{T-} %{F#888} %{F-}%{T7}%upspeed:9%%{T-}
+label-connected = %{F#8e92a4} %{F-}%{T7}%downspeed:9%%{T-} %{F#8e92a4} %{F-}%{T7}%upspeed:9%%{T-}
 label-connected-font = 7
 
 format-disconnected-prefix =  
@@ -237,18 +240,24 @@ interface = enp0s31f6
 
 
 
+[module/eth-dynamo]
+inherit = module/eth
+interface = enp67s0
+
+
+
 [module/wifi]
 type = internal/network
 interval = 2
 
-format-connected-prefix = %{F#888}%{F-}
+format-connected-prefix = %{F#8e92a4}%{F-}
 format-connected-prefix-font = 5
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.mod-underline}
-label-connected = %essid% %{F#888} %{F-}%downspeed:9% %{F#888} %{F-}%upspeed:9%
+label-connected = %essid% %{F#8e92a4} %{F-}%downspeed:9% %{F#8e92a4} %{F-}%upspeed:9%
 label-connected-font = 7
 
-format-disconnected-prefix = %{F#888}%{F-}
+format-disconnected-prefix = %{F#8e92a4}%{F-}
 format-disconnected-prefix-font = 5
 format-disconnected-prefix-foreground = #66
 format-disconnected =
@@ -277,7 +286,7 @@ type = internal/xbacklight
 
 format = <label> <bar>
 format-underline = ${colors.mod-underline}
-label = %{F#888}%{F-}
+label = %{F#8e92a4}%{F-}
 label-font = 5
 
 bar-width = 10
@@ -305,14 +314,14 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 format-volume-underline = ${colors.mod-underline}
-label-volume = "%{A3:~/.config/polybar/pavucontrol.sh:}%{F#888} %{F-}%{A}"
+label-volume = "%{A3:~/.config/polybar/pavucontrol.sh:}%{F#8e92a4} %{F-}%{A}"
 label-volume-foreground = ${root.foreground}
 label-volume-font = 5
 
 format-muted = <label-muted>
 format-muted-foreground = ${colors.foreground-alt}
 format-muted-underline = ${self.format-volume-underline}
-label-muted = "%{A3:~/.config/polybar/pavucontrol.sh:}%{F#888} %{F-}%{A}"
+label-muted = "%{A3:~/.config/polybar/pavucontrol.sh:}%{F#8e92a4} %{F-}%{A}"
 label-muted-font = 5
 label-muted-foreground = #66
 
@@ -377,7 +386,7 @@ thermal-zone = 0
 hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
 warn-temperature = 85
 
-format-prefix = %{F#888} %{F-}
+format-prefix = %{F#8e92a4} %{F-}
 format-prefix-font = 5
 format = <label>
 format-underline = ${colors.mod-underline}
@@ -407,7 +416,7 @@ date-alt =
 time = "%H:%M:%S"
 time-alt =
 
-label = %{F#888}%{F-}   %date% %time%
+label = %{F#8e92a4}%{F-}   %date% %time%
 label-font = 8
 
 
