@@ -136,8 +136,8 @@ label-unfocused-font = ${self.label-focused-font}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-foreground = ${colors.secondary}
-label-urgent-background = ${colors.alert}
+label-urgent-foreground = #ffffff
+label-urgent-background = #5e354d
 label-urgent-padding = ${self.label-focused-padding}
 label-urgent-font = ${self.label-unfocused-font}
 
