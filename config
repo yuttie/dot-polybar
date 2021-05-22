@@ -52,7 +52,7 @@ modules-right = cpu memory eth-home eth-dynamo eth-forge eth-terra wifi-milkyway
 
 tray-position = right
 tray-padding = 2
-tray-maxsize = 20
+tray-maxsize = 28
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
