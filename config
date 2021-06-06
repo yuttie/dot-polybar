@@ -54,8 +54,8 @@ tray-position = right
 tray-padding = 2
 tray-maxsize = 28
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 
 
