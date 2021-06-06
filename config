@@ -44,7 +44,7 @@ font-5 = Mplus 1:size=9;3
 ; For digits
 font-6 = Mplus 1:size=9;3
 ; Clock
-font-7 = Mplus 1:size=9;3
+font-7 = Mplus 1:weight=bold:size=9;3
 
 modules-left = i3
 modules-center = date
