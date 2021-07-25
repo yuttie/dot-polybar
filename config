@@ -48,7 +48,7 @@ font-7 = Mplus 1:weight=bold:size=9;3
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory eth-home eth-dynamo eth-forge eth-terra wifi-milkyway xbacklight battery temperature
+modules-right = cpu memory eth wifi-milkyway xbacklight battery temperature
 
 tray-position = right
 tray-padding = 2
@@ -203,6 +203,7 @@ bar-used-empty-font = 3
 [module/eth]
 type = internal/network
 interval = 2
+interface = ${env:ETH_INTERFACE}
 
 format-connected-prefix = %{F#8e92a4}%{F-}
 format-connected-prefix-font = 5
@@ -222,33 +223,10 @@ label-disconnected-font = 8
 
 
 
-[module/eth-home]
-inherit = module/eth
-interface = enp8s0
-
-
-
-[module/eth-terra]
-inherit = module/eth
-interface = enp0s25
-
-
-
-[module/eth-forge]
-inherit = module/eth
-interface = enp0s31f6
-
-
-
-[module/eth-dynamo]
-inherit = module/eth
-interface = enp67s0
-
-
-
 [module/wifi]
 type = internal/network
 interval = 2
+interface = wlp58s0
 
 format-connected-prefix = %{F#8e92a4}%{F-}
 format-connected-prefix-font = 5
@@ -272,12 +250,6 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
-
-
-
-[module/wifi-milkyway]
-inherit = module/wifi
-interface = wlp58s0
 
 
 
@@ -383,7 +355,7 @@ animation-charging-font = 5
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
+hwmon-path = ${env:TEMPERATURE_HWMON_PATH}
 warn-temperature = 85
 
 format-prefix = %{F#8e92a4} %{F-}
