@@ -13,7 +13,7 @@ if [ "$HOSTNAME" == 'home' ]; then
   export TEMPERATURE_HWMON_PATH=/sys/class/hwmon/hwmon1/temp2_input
 elif [ "$HOSTNAME" == 'dynamo' ]; then
   export ETH_INTERFACE=enp67s0
-  export TEMPERATURE_HWMON_PATH=/sys/class/hwmon/hwmon0/temp2_input
+  export TEMPERATURE_HWMON_PATH=/sys/class/hwmon/hwmon1/temp2_input
 elif [ "$HOSTNAME" == 'forge' ]; then
   export ETH_INTERFACE=enp0s31f6
 fi
