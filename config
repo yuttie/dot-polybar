@@ -50,7 +50,7 @@ font-7 = IBM Plex Sans JP:size=10
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory eth wifi-milkyway xbacklight battery temperature
+modules-right = cpu memory eth wifi xbacklight battery temperature
 
 tray-position = right
 tray-detached = false
@@ -230,7 +230,7 @@ label-disconnected-font = 8
 [module/wifi]
 type = internal/network
 interval = 2
-interface = wlp58s0
+interface = ${env:WIFI_INTERFACE}
 
 format-connected-prefix = %{F#c6c8d1}%{F-}
 format-connected-prefix-font = 5
