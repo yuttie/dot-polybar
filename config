@@ -1,6 +1,9 @@
 [colors]
-background = #00151821
-background-alt = #83a1c5
+# With picom
+#background = #00151821
+# Without picom
+background = #6a96af
+background-alt = #8badc1
 foreground = #e4e5ed
 foreground-alt = #666
 primary = #ffb52a
@@ -25,7 +28,10 @@ line-size = 3
 line-color = #f00
 
 border-bottom-size = 0
-border-color = #00000000
+# With picom
+#border-color = #00000000
+# Without picom
+border-color = #000000
 
 padding-left = 0
 padding-right = 2
@@ -110,37 +116,51 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #83a1c5
+label-mode-foreground = #ffffff
 label-mode-background = ${colors.background}
 label-mode-font = 6
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-foreground = #e4e5ed
-label-focused-background = #22ffffff
-label-focused-underline = #00ffffff
+# With picom
+#label-focused-background = #22ffffff
+#label-focused-underline = #00ffffff
+# Without picom
+label-focused-background = #8badc1
+label-focused-underline = ${colors.background}
 label-focused-padding = 4
 label-focused-font = 6
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-foreground = #e4e5ed
-label-visible-background = #22ffffff
-label-visible-underline = #00ffffff
+# With picom
+#label-visible-background = #22ffffff
+#label-visible-underline = #00ffffff
+# Without picom
+label-visible-background = #8badc1
+label-visible-underline = ${colors.background}
 label-visible-padding = ${self.label-focused-padding}
 label-visible-font = ${self.label-unfocused-font}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-foreground = #c6c8d1
-label-unfocused-background = #00151821
+# With picom
+#label-unfocused-background = #00151821
+# Without picom
+label-unfocused-background = ${colors.background}
 label-unfocused-padding = ${self.label-focused-padding}
 label-unfocused-font = ${self.label-focused-font}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-foreground = #ffffff
-label-urgent-background = #aa5e354d
+# With picom
+#label-urgent-background = #aa5e354d
+# Without picom
+label-urgent-background = #5e354d
 label-urgent-padding = ${self.label-focused-padding}
 label-urgent-font = ${self.label-unfocused-font}
 
@@ -191,12 +211,15 @@ format-prefix = %{F#c6c8d1}    %{F-}
 label = %{T7}%gb_used:8%%{T-}
 label-font = 8
 bar-used-indicator =
-bar-used-width = 10
+bar-used-width = 20
 bar-used-foreground-0 = #e4e5ed
 bar-used-foreground-1 = #e4e5ed
 bar-used-foreground-2 = #e4e5ed
 bar-used-foreground-3 = #e4e5ed
-bar-used-empty-foreground = #22e4e5ed
+# With picom
+#bar-used-empty-foreground = #22e4e5ed
+# Without picom
+bar-used-empty-foreground = #8badc1
 bar-used-fill = █
 bar-used-empty = █
 bar-used-fill-font = 4
