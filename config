@@ -38,15 +38,15 @@ font-1 = UNUSED
 ; For speaker indicator
 font-2 = IBM Plex Sans JP:size=9
 ; Vertical/horizontal inidicator
-font-3 = Iosevka Fixed Curly:size=8;3
+font-3 = Iosevka Fixed:size=8;3
 ; Emoji
-font-4 = Iosevka Nerd Font:size=10;5
+font-4 = Symbols Nerd Font:size=10;5
 ; For workspace names
-font-5 = IBM Plex Sans JP:size=10
+font-5 = Inter:size=10;5
 ; For digits
 font-6 = IBM Plex Sans JP:size=10
 ; Clock
-font-7 = IBM Plex Sans JP:size=10
+font-7 = IBM Plex Sans JP:weight=semibold:size=10
 
 modules-left = i3
 modules-center = date
